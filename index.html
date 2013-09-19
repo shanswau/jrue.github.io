@@ -25,6 +25,12 @@
     dl p{
       margin: 0;
     }
+    dd p{
+      font-style: normal;
+    }
+    .italic{
+      font-style: italic;
+    }
     </style>
   </head>
 
@@ -43,76 +49,81 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h3>Course Objective</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This course is an introduction to programming concepts as they relate to the journalism industry. The goal of this course is to equip students with a foundational technical literacy to construct interactive online stories such as data visualizations, infographics, maps, multimedia packages, games or innumerable other types of projects students may conceive.</p>
+<p>Students will learn the basics of JavaScript—the language of the web. They will learn the fundamentals of prototypical object oriented programming, an important component in many web coding languages. The course will cover variables, typecasting, arrays, for-loops, conditional statements, comparison operators, functions, enclosures and cross-domain data requesting. This course will also cover popular data libraries like D3 and Leaflet. While these terms may seem esoteric to a layperson, they need to  be part of the vernacular of students wishing to enhance their abilities in this expanding area of journalism.</p>
 
-<h3>Class Syllabus</h3>
+<h3>Weekly Schedule</h3>
 <dl>
 <dt>Sept. 5</dt> 
 <dd><p><strong>Introduction to JavaScript:</strong> class will cover syntax, variables, operators, datatypes, concatenation, arrays, multidimensional arrays and displaying information in the console.</p>
-<p>Reading: Section on variables in the KDMC online tutorial.</p></dd>
+<p class="italic">Reading: Section on variables in the KDMC online tutorial.</p>
+<p class="italic"><a href="pdfs/variables.pdf">Link to PDF of presentation given in class.</a></p>
+<p class="italic"><a href="http://media.journalism.berkeley.edu/classes/coding/quizzes/quiz1.html">Link to study quiz on variables and arrays.</a></p></dd>
 
 <dt>Sept. 12:</dt> 
 <dd><p><strong>Objects:</strong> class will cover the three types of object notation: object-literal, dot notation and square-bracket notation; how to store or retrieve data; JSON structures and combining objects with arrays.</p>
-<p>Reading: Section on objects in the KDMC online tutorial.</p>
-<p>Assignment: Parse a data JSON feed from a popular online site like Twitter, NYT or Instagram.</p></dd>
+<p class="italic">Reading: Section on objects in the KDMC online tutorial.</p>
+<p class="italic"><a href="pdfs/objects.pdf">Link to PDF of presentation on Objects given in class.</a></p>
+<p class="italic"><a href="http://media.journalism.berkeley.edu/classes/coding/quizzes/quiz2.html">Link to study quiz on variables and arrays.</a></p></dd>
 
 <dt>Sept. 19:</dt> 
 <dd><p><strong>Conditionals:</strong> class will cover logical conditionals and comparison operators. We will use jQuery to manipulate the DOM based on a given set of conditions.</p>
-<p>Reading: Section on conditionals in KDMC online tutorial.</p></dd>
+<p class="italic">Reading: Section on conditionals in KDMC online tutorial.</p>
+<p class="italic"><a href="pdfs/conditionals.pdf">Link to PDF of presentation on conditioinals.</a></p>
+<p class="italic"><a href="pdfs/loops.pdf">Link to PDF of presentation on loops.</a></p>
+<p class="italic"><a href="http://media.journalism.berkeley.edu/classes/coding/quizzes/quiz3.html">Link to quiz on conditionals</a></p></dd>
 
 <dt>Sept. 26:</dt> 
 <dd><p><strong>Functions:</strong> class will cover how to use functions to execute code blocks, send data to functions via arguments, return data from a function and how to use anonymous functions. Discuss how functions affect variable scope, and how to use encapsulation to avoid cluttering the global scope.</p>
-<p>Reading: Section on functions in KDMC tutorial, and begin looking at Code Academy tutorials.</p></dd>
+<p class="italic">Reading: Section on functions in KDMC tutorial, and begin looking at Code Academy tutorials.</p></dd>
 
 <dt>Oct. 3:</dt> 
 <dd><p><strong>The DOM:</strong> finally, class will start constructing projects that will manipulate the DOM and put into practice the previous four classes for constructing web projects. We will construct a basic online news quiz in class.</p>
-<p>Reading: Section on DOM in KDMC tutorial, jQuery tutorials and Code Academy.</p>
-<p>Assignment: Build a news quiz for next class.</p></dd>
+<p class="italic">Reading: Section on DOM in KDMC tutorial, jQuery tutorials and Code Academy.</p></dd>
 
 <dt>Oct. 10:</dt> 
 <dd><p><strong>Loops:</strong> class will cover how to iterate through a dataset, like an array or object. We will take a dataset from a popular Web service, and display content depending on the length of the dataset.</p>
-<p>Reading: Section on loops in KDMC tutorial.</p>
-<p>Assignment: Take tutorial dataset, and display the data visually in the DOM.</p></dd>
+<p class="italic">Reading: Section on loops in KDMC tutorial.</p>
+<p class="italic">Assignment: Take tutorial dataset, and display the data visually in the DOM.</p></dd>
 
 <dt>Oct. 17:</dt> 
 <dd><p><strong>Workflow:</strong> class will cover the process and how to structure some basic programs based on the subjects covered in previous classes. Practical guidelines to keeping code clean, logical and well-commented. Introduction to GitHub for posting future assignments.</p>
-<p>Reading: GitHub online tutorial.</p>
-<p>Assignment: Post previous assignments to GitHub class account. Study for test following week.</p></dd>
+<p class="italic">Reading: GitHub online tutorial.</p>
+<p class="italic">Assignment: Post previous assignments to GitHub class account. Study for test following week.</p></dd>
 
 <dt>Oct. 24:</dt> 
 <dd><p><strong>APIs:</strong> class will cover jQuery and AJAX requests for querying web services for JSON data. Then we will parse the data, and display elements in the DOM. Class will also include an in-class written test on parsing JSON.</p>
-<p>Reading: jQuery tutorial on AJAX method.</p>
-<p>Assignment: Build an instagram slideshow viewer.</dd>
+<p class="italic">Reading: jQuery tutorial on AJAX method.</p>
+<p class="italic">Assignment: Build an instagram slideshow viewer.</dd>
 
 <dt>Oct. 31:</dt> 
 <dd><p><strong>HTML5 and document setup:</strong> class will cover more on the process and structure of building web projects, including using Modernizr for testing new HTML5 features before implementing them, and setting up a boilerplate template for real-world projects. How to incorporate projects via an iFrame.</p>
-<p>Reading: Look at the tutorial templates given by the instructor.</p>
-<p>Assignment: Use one of the tutorial templates to construct a web project.</p></dd>
+<p class="italic">Reading: Look at the tutorial templates given by the instructor.</p>
+<p class="italic">Assignment: Use one of the tutorial templates to construct a web project.</p></dd>
 
 <dt>Nov. 7:</dt> 
 <dd><p><strong>Prototyping and OOP:</strong> class will cover some of the foundations to prototypical languages and object oriented programming. How to store functions in variables, instantiate objects, object inheritance, polymorphism. How to use libraries which have their own variable scope.</p>
-<p>Reading: Read D3 tutorials for next week’s class.</p></dd>
+<p class="italic">Reading: Read D3 tutorials for next week’s class.</p></dd>
 
 <dt>Nov. 14:</dt> 
 <dd><p><strong>Introduction to D3:</strong> class will introduce D3 dataviz library for manipulating the DOM.</p>
-<p>Reading: Read Jerome Cukier’s D3 tutorial.</p>
-<p>Assignment: Recreate one of the charts from the D3 example list.</p></dd>
+<p class="italic">Reading: Read Jerome Cukier’s D3 tutorial.</p>
+<p class="italic">Assignment: Recreate one of the charts from the D3 example list.</p></dd>
 
 <dt>Nov. 21:</dt> 
 <dd><p><strong>Animation in D3:</strong> class will cover basic animation methods, parsing CSV data, and additional D3 methods.</p>
-<p>Reading: D3 online tutorials.</p>
-<p>Assignment: Create a D3 chart based on a CSV given by the instructor.</p></dd>
+<p class="italic">Reading: D3 online tutorials.</p>
+<p class="italic">Assignment: Create a D3 chart based on a CSV given by the instructor.</p></dd>
 
 <dt>Nov. 28:</dt> 
 <dd><p>No Class for Thanksgiving Break</p></dd>
 
 <dt>Dec. 5:</dt> 
 <dd><p><strong>Leaflet Maps:</strong> class will cover constructing a basic Leaflet map by following their documentation, how to add a marker, and customize the info window.</p>
-<p>Reading: Leaflet tutorial.</p>
-<p>Assignment: Create a leaflet map based on a JSON dataset given by the instructor.</p></dd>
+<p class="italic">Reading: Leaflet tutorial.</p>
+<p class="italic">Assignment: Create a leaflet map based on a JSON dataset given by the instructor.</p></dd>
 
 <dt>Dec. 12:</dt>  
 <dd><p><strong>Putting it all together:</strong> class will cover how to incorporate a project into a website in a real-world scenario. Using AJAX to query data, loops to iterate through the data, and a third-party library to display the data.</p></dd>
