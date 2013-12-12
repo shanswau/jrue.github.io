@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Final Assignment</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Coding for journalists : UC Berkeley Graduate School of Journalism" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <style type="text/css">
+        dl{
+            padding-top:20px;
+        }
+        dl dt{
+            display:inline-block;
+            float: left;
+            margin: 0 10px 0px 0;
+            clear:left;
+        }
+        dl dd{
+            margin: 0 0 0px 40px;
+        }
+        dl p{
+            margin: 0 0 20px;
+        }
+        dd p{
+            font-style: normal;
+        }
+        dd ul{
+            margin-left: 20px;
+        }
+        dd li{
+            margin:0 0 10px;
+        }
+        .italic{
+            font-style: italic;
+        }
+        pre{
+            font-style: normal !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <h1 id="project_title">Coding for journalists</h1>
+            <h2 id="project_tagline">Final Assignment</h2>
+        </header>
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                <h3>Final Assignment for Coding For Journalists</h3>
+                <p>In this final assignment, you will code up a news package from start to finish with the provided tutorial material. This tutorial will outline the steps, but will leave some of the processes to your own devices.</p>
+                <p><strong>Remember</strong>, you can use Google, Stackoverflow, or any other number of websites to find information if you get stuck; <strong>be resourceful!</strong></p>
+
+                <dl>
+                    <dt>Step 1:</dt>
+                    <dd>
+                        <p><strong>Setting up a new document</strong></p>
+                        <p>In your favorite text editor, create a basic HTML page. Don't forget to change the &lt;title&gt; attribute. You should change the content to <code>Final Assignment — {your name}</code> so we know this is your page.</p>
+                        <p>Next, we should include all of the JavaScript libraries we will be using. To do this, we will be using CDNs (<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etworks). These are links to files hosted elsewhere so we don't have to actually download them. Instead, we will link to the hosted versions.</p>
+                        <ul>
+                            <li><strong>jQuery</strong>: We will need to link to the jQuery library (available on the jQuery download page) It looks like this <code>//code.jquery.com/jquery-1.10.2.min.js</code> But remember, we need to put this into a script tag!! We should also put <code>http:</code> in front.</li>
+                            <li><strong>D3</strong>: The D3 library is conveniently listed on the D3 homepage, best of all it's already in a script tag!</li>
+                            <li><strong>Bootstrap</strong>: There exists a Bootstrap CDN, which we've never used in class. Google it! Bootstrap is both a JS and CSS file. We will need to include both in the head of our document.</li>
+                        </ul>
+                        <p>Remember JavaScript needs a &lt;script&gt; tag, and CSS stylesheets need a &lt;link&gt; tag. CSS also needs to have a special attribute for it to work called <code>rel="stylesheet"</code>.</p>
+                        <p>Next, we should include a couple of files to make our website compatible with older versions of Internet Explorer (IE). This should be boilerplate stuff for every project you work on. These two files are called <strong>respond.js</strong> and <strong>html5shiv</strong>. Respond allows Internet Explorer versions 6-8 to understand new CSS3 styles like max/min-width and responsive media queries. The html5shiv allows older IE versions to understand new HTML5 tags like &lt;article&gt; or &lt;section&gt;. Fortunately, there are CDNs for those too, so we don't even have to download them, we can just include them in our document &lt;head&gt;.</p>
+                        <p><pre>&lt;!--[if lt IE 9]&gt;<br>&nbsp;&nbsp;&nbsp;&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;<br>&nbsp;&nbsp;&nbsp;&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"&gt;&lt;/script&gt;<br>&lt;![endif]--&gt;</pre></p>
+                        <p>These are special conditional comment tags which only Internet Explorer can see. The "lt" means "less than," so when it says "if lt IE 9" that translates to <em>if your browser is less than Internet Explorer 9, then...</em> 
+                        <p>There is also "lte" which means "less than or equal to." What do you suppose</p>
+                        <p><code>&lt;!--[if lte IE 8]&gt;  &lt;![endif]--&gt;</code></p>
+                        <p> does?</p>
+                    </dd>
+                    <dt>Step 2:</dt>
+                    <dd>
+                        <p><strong>Build the HTML structure</strong></p>
+                        <p>Next, let's build the structure of our document. In our HTML we will create a series of three &lt;section&gt; tags, each with a different id; "opening," "videotrailer," and "embed."</p>
+                        <p><pre>&lt;section id="opening"&gt;<br><br>&lt;/section&gt;</pre></p>
+                        <p>Next, in that opening section, put an &lt;h1&gt;, &lt;h2&gt; and &lt;button&gt; tag. The text should read something short, like "Final Assignment" and the h2 can say "by {your name}".</p>
+                        <p>The default button might look a little ugly, so lets use one of the <a href="http://getbootstrap.com">bootstrap</a> styles. There are two classes we can add to the button, "btn" and "btn-default".</p>
+                    </dd>
+                    <dt>Step 3:</dt>
+                    <dd>
+                        <p><strong>Adding some jQuery for resizing</strong></p>
+                        <p>HTML/CSS is notoriously difficult when it comes to dealing with heights. A page is scrollable, so adjusting heights tends to be a tricky task. JavaScript/jQuery to the rescue!</p>
+                        <p>We can use jQuery to determine the window's height that the user currently has, and then set all of the &lt;section&gt; tags to match.</p>
+                        <p>First, let's add our script tags and our jQuery ready function (don't forget, this is important!)</p>
+                        <p>Next, we want to create a function that triggers when the window loads, but also when it resizes. We can use jQuery's <code>on</code> command, which allows us to trigger events and run a function when those events fire. The nice thing about jQuery is that it allows us to specify multiple events in one declaration.</p>
+                        <p><pre>$(window).on('load resize', function(){<br><br>});</pre></p>
+                        <p>This code will execute the anonymous function whenever the window either loads for the first time, or when the user resizes the window.</p>
+                        <p>Next, let's add some code to size all of our &lt;section&gt; tags to the same height as the window, thus creating a panel effect where each section of our project is the same size as the window.</p>
+                        <p><pre>$('section').height( $(window).height() );</pre></p>
+                        <p>This code is essentially saying make the height value of each section the same as the window's height.</p>
+                        <p>Lastly, let's add some CSS which will make each section position relative, so that any absolute elements inside the section will position according to the section.</p>
+                        <p><pre>section{<br>&nbsp;&nbsp;&nbsp;position : relative;<br>}</pre></p>
+                    </dd>
+
+                    <dt>Step 4:</dt>
+                    <dd>
+                        <p><strong>Centering the box</strong></p>
+                        <p>Let's get the first page looking good. Let's center the page title and tagline. We will use a trick called <a href="http://codepen.io/shshaw/full/gEiDt">absolute centering</a> which is a method to set the left, right, top and bottom to zero, so they all compete for eachother. We also set the margins on all sides to auto. To do this, we need to create a wrapping element like a &lt;div&gt; around our h1, h2, and button tags. Give it a memorable id.</p>
+                        <p>Note that absolute centering only works when there is a predefined width and height on the box. Let's do that now in our CSS:</p>
+                        <p><pre>#boxcenter{<br>&nbsp;&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;&nbsp;text-align:center; <br>&nbsp;&nbsp;&nbsp;top:0;<br>&nbsp;&nbsp;&nbsp;right:0;<br>&nbsp;&nbsp;&nbsp;bottom:0;<br>&nbsp;&nbsp;&nbsp;left:0;<br>&nbsp;&nbsp;&nbsp;margin:auto;<br>&nbsp;&nbsp;&nbsp;width:150px; /* adapt to your own situation */<br>&nbsp;&nbsp;&nbsp;height:150px;<br>}</pre></p>
+                    </dd>
+                     <dt>Step 5:</dt>
+                     <dd>
+                        <p><strong>Button action</strong></p>
+                        <p>Next, let's make the page scroll down when the user clicks on the button. We will do this with jQuery.</p>
+                        <p>Look at the code in section 3, and see how we used the <code>on</code> command to run a function when an event fired. We're going to use that same process, but this time, we want to perform the action on the 'button' rather than the window. And we don't want to wait for the <em>load</em> or <em>resize</em> events, instead, let's trigger the function using the <code>click</code> event.</p>
+                        <p>So, what do we want to do when the user clicks the button? Let's have the page autoscroll. We can use jQuery's animate function to scroll the page down. There is a special property that jQuery recognizes called "scrollTop" which specifies how much the page needs to scroll. So after the user clicks the button, change the scrollTop property by the window's height, thus giving the illusion that we are scrolling to the next section.</p>
+                        <p><pre>$('html, body').animate({scrollTop: $(window).height()}, 1000);</pre></p>
+                        <p>In order to scroll the page, we need to adjust the scrollTop of both the HTML and body elements.</p>
+                     </dd>
+                     <dt>Step 6:</dt>
+                     <dd>
+                        <p><strong>Load a video</strong></p>
+                        <!--<p>Let's load a video as soon as the scrolling is done. We can dynamically load a video, which sometimes is preferred than hardcoding it right into the HTML. This way, the page loads very quickly, and the video is loaded after the fact.</p>
+                        <p>Using the animate-scroll code we used in step 5, let's create something called a callback. This is a function which runs once the animation is complete.</p>
+                        <p><pre>$('html, body').animate({scrollTop: $(window).height()}, { <strong>duration:1000, complete:function(){}</strong> });</pre></p>-->
+                     </dd>
+                </dl>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>
